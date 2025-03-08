@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+
 char	**ft_split(char *str)
 {
     int i = 0;
@@ -8,6 +9,7 @@ char	**ft_split(char *str)
     int index = 0;
     int start = 0;
     char **return_str = malloc(1000 * sizeof(char *));
+
     while (str[i])
     {
         while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
@@ -33,15 +35,15 @@ char	**ft_split(char *str)
     return (return_str);
 }
 
-// int main()
-// {
-//     char **str = ft_split("  starting and ending   ");
-//     int i = 0;
-//     while (str[i] && i < 5)
-//     {
-//         printf("%s\n", str[i]);
-//         free(str[i]);
-//         i++;
-//     }
-//     free(str);
-// }
+int main()
+{
+    char **str = ft_split("  starting and ending   ");
+    int i = 0;
+    while (str[i] && i < 5)
+    {
+        printf("%s\n", str[i]);
+        free(str[i]);
+        i++;
+    }
+    free(str);
+}
